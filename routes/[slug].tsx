@@ -3,6 +3,7 @@ import { getPost, Post } from "@/utils/posts.ts";
 import { PageProps } from "$fresh/server.ts";
 import { CSS, render } from "$gfm";
 import { Head } from "$fresh/runtime.ts";
+import Footer from "../components/footer.tsx";
 
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
@@ -19,6 +20,11 @@ export default function PostPage(props: PageProps<Post>) {
       <Head>
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
+      <header className="px-3 py-3 bg-green-200 h-16 flex items-center">
+        <div className="px-4 w-screen-md">
+          <a href="/" className="text-2xl font-bold hover:text-underline">X-writing</a>
+        </div>
+      </header>
       <main class="max-w-screen-md px-4 pt-16 mx-auto">
         <h1 class="text-5xl font-bold">{post.title}</h1>
         <time class="text-gray-500">
@@ -32,6 +38,7 @@ export default function PostPage(props: PageProps<Post>) {
           class="mt-8 markdown-body"
           dangerouslySetInnerHTML={{ __html: render(post.content) }}
         />
+        <Footer />
       </main>
     </>
   );
