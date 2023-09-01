@@ -13,7 +13,7 @@ export default function Header({ active }: Props) {
 
   return (
       <div class="bg-green-200 w-full py-6 px-4">
-        <div class="max-w-screen-md flex flex-col md:flex-row gap-4 mx-auto">
+        <div class="max-w-screen-md flex md:flex-col gap-4 mx-auto">
           <div className="flex items-center flex-1">
             <IconSmartHome aria-hidden="true" />
             <div className="text-2xl  ml-1 font-bold">
