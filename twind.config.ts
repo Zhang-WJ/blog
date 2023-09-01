@@ -7,6 +7,10 @@ export default {
       gridTemplateColumns: {
         desktop: "min-content auto"
       }
+    },
+    screens:{
+      'md': {'max': '767px'},
+      'lg': {'max': '1040px'},
     }
   }
 } as Options;

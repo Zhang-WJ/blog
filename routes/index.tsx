@@ -17,7 +17,7 @@ export default function BlogIndexPage(props: PageProps<Post[]>) {
   return (
         <main className="min-h-screen">
           <Header active={'/'} />
-          <main className="max-w-screen-md px-4 pt-1 mx-auto">
+          <main className="max-w-screen-lg px-4 pt-1 mx-auto">
             <div className="mt-8">
               {posts.map((post) => <PostCard post={post} />)}
             </div>

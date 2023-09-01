@@ -6,8 +6,8 @@ export default function () {
       <>
         <Header active={'/about'}/>
 
-        <div class="max-w-screen-md mx-auto my-5">
-          <div class="grid gap-x-5 gap-y-10 grid-cols-desktop">
+        <div class="max-w-screen-lg mx-auto my-5 px-4">
+          <div class="grid gap-x-5 gap-y-10 grid-cols-desktop lg:grid-cols-1 lg:gap-y-0">
             <div
                 class="flex flex-col items-end"
             >
@@ -26,9 +26,9 @@ export default function () {
             </div>
 
             <div
-                class="flex justify-between gap-[10rem] items-center"
+                class="flex md:flex-col md:items-start md:gap-y-3 justify-between gap-[10rem] items-center"
             >
-              <div class="">
+              <div class="md:order-2">
                 <h1>WeiJun Zhang</h1>
                 <h2 class="my-1">FrontEnd Web Developer</h2>
                 <p class="whitespace-pre-wrap">
@@ -37,7 +37,7 @@ export default function () {
                 </p>
               </div>
               <img
-                  class="rounded-full flex-shrink-0"
+                  class="rounded-full flex-shrink-0 md:order-1 md:w-20"
                   src="https://avatars.githubusercontent.com/u/37130869?v=4"
                   height="150"
                   width="150"
@@ -45,12 +45,12 @@ export default function () {
               />
             </div>
 
-            <h3>EDUCATION</h3>
+            <h3 class="lg: mt-8">EDUCATION</h3>
             <div className="space-y-3 lg:space-y-2">
               <div>
-                <div className="flex justify-between items-center mb-8">
-                  <h4>Hainan Tropical Ocean University</h4>
-                  <p>Seq, 2008 - Jun, 2012 </p>
+                <div className="flex justify-between items-center md:items-start md:mb-2 mb-8 md:flex-col">
+                  <h4 className="md:order-2">Hainan Tropical Ocean University</h4>
+                  <p className="md:order-1 md:mb-[8px]">Seq, 2008 - Jun, 2012 </p>
                 </div>
                 <p className="whitespace-pre-wrap">
                   Focus: Network Engineering
