@@ -1,0 +1,18 @@
+body h1 {
+    font-size: 4rem;
+    line-height: 1;
+    font-weight: 700;
+}
+
+body h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgba(136,136,136,var(--tw-text-opacity))
+}
+
+body p {
+    /*--tw-text-opacity: 1;*/
+    /*color: rgba(136,136,136,var(--tw-text-opacity));*/
+    line-height: 1.375;
+}

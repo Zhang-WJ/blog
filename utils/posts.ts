@@ -7,6 +7,7 @@ export interface Post {
   publishedAt: Date;
   content: string;
   snippet: string;
+  categories: string[]
 }
 
 export async function getPost(slug: string): Promise<Post | null> {
@@ -19,6 +20,7 @@ export async function getPost(slug: string): Promise<Post | null> {
       publishedAt: new Date(attrs.published_at as number),
       content: body,
       snippet: attrs.snippet as string,
+      categories: attrs.categories as string[]
     };
   } catch (_: unknown) {
     return null;
