@@ -21,8 +21,8 @@ export default function PostPage(props: PageProps<Post>) {
       <Head>
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
-      <header className="px-3 py-3 bg-green-200 h-16 flex items-center">
-        <div className="px-4 w-screen-md">
+      <header className="w-full py-3 bg-green-200 h-16 flex items-center">
+        <div className="flex px-4 max-w-screen-lg mx-auto flex-1">
           <a href="/" className="text-2xl font-bold hover:text-underline">X-writing</a>
         </div>
       </header>

@@ -6,11 +6,12 @@ export default {
     extend: {
       gridTemplateColumns: {
         desktop: "min-content auto"
+      },
+      screens:{
+        'md': {'max': '767px'},
+        // 'lg': {'max': '1040px', 'min': '1024px'},
       }
     },
-    screens:{
-      'md': {'max': '767px'},
-      'lg': {'max': '1040px'},
-    }
+
   }
 } as Options;

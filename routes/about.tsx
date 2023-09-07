@@ -7,7 +7,7 @@ export default function () {
         <Header active={'/about'}/>
 
         <div class="max-w-screen-lg mx-auto my-5 px-4">
-          <div class="grid gap-x-5 gap-y-10 grid-cols-desktop lg:grid-cols-1 lg:gap-y-0">
+          <div class="grid gap-x-5 gap-y-10 grid-cols-desktop md:grid-cols-1 md:gap-y-0">
             <div
                 class="flex flex-col items-end"
             >
@@ -45,8 +45,8 @@ export default function () {
               />
             </div>
 
-            <h3 class="lg: mt-8">EDUCATION</h3>
-            <div className="space-y-3 lg:space-y-2">
+            <h3 class="md:mt-8">EDUCATION</h3>
+            <div className="space-y-3 md:space-y-2">
               <div>
                 <div className="flex justify-between items-center md:items-start md:mb-2 mb-8 md:flex-col">
                   <h4 className="md:order-2">Hainan Tropical Ocean University</h4>

@@ -1,5 +1,5 @@
 ---
-title: Functional Reactive Programming
+title: Reactive programming(Observable)
 published_at: 2023-08-25T15:00:00.000Z
 snippet: rxjs.
 categories:
@@ -18,11 +18,16 @@ categories:
     
 上面这是基于rxjs的一个可观察对象的例子
 
-FRP里面，重要的就是Observable， 这里我们主要围绕Observable的一些工具的实现
+FRP里面，重要的就是Observable， 这里我们主要围绕Observable 2大特性
+ - 1.Data propagation
+ - 2.Declarative, lazy pipeline
+
 > An Observable is a function that takes an observer and returns a function. Nothing more, nothing less. If you write a function that takes an observer and returns a function, is it async or sync? Neither. It’s a function.
 —Ben Lesh
 
-![stream data](/rxjs-01.jpg/)
+
+![Data propagation](/rxjs-01.jpg/)
+
 
 这里我们使用Corejs中的Observable来构建我们自己的Reactive工具
 
@@ -151,3 +156,39 @@ skip 允许你忽略可观察对象前面的X个event
 测试下结果
 
 ![stream data](/observable.jpg/)
+
+以上完成了一些基本的功能，接下来我们通过mix-in的方式集成到我们的Observable中
+
+    export const ReactiveExtensions = {
+        filter(predicate){
+            return filter(predicate, this)
+        },
+        map(fn){
+            return map(fn, this)
+        },
+        skip(count){
+            return skip(count, this)
+        },
+        reduce(accumulator, initialValue={}){
+            return reduce(accumulator, initialValue, this)
+        },
+    }
+    
+    Object.assign(Observable.prototype, ReactiveExtensions);
+
+ 现在我们可以使我们的工具更好用
+ 
+    obs.skip(1)
+       .filter(isEven) 
+       .map(square) 
+       .reduce(add, 0)
+       .subscribe({
+          next(value){
+            assert.equal(value, 20);
+          },
+          complete() {
+            console.log('complete');
+          },
+    });
+
+同样，测试成功
